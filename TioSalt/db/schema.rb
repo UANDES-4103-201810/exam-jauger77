@@ -10,13 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180620194851) do
+ActiveRecord::Schema.define(version: 20180620221522) do
 
   create_table "crusts", force: :cascade do |t|
     t.string "size"
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "customers", force: :cascade do |t|
+    t.integer "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_customers_on_order_id"
   end
 
   create_table "delivery_infos", force: :cascade do |t|
