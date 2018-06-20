@@ -4,7 +4,7 @@ class CreateDeliveryInfos < ActiveRecord::Migration[5.1]
       t.references :order, foreign_key: true
       t.text :adress1
       t.text :adress2
-      t.int :phone
+      t.integer :phone
 
       t.timestamps
     end
